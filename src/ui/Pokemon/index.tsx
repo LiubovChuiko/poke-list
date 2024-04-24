@@ -38,7 +38,7 @@ export default function PokemonPage() {
     }
     dispatch(Actions.setCurrentPokemon(pokemon.response));
     setPageState('success');
-  }, [dispatch, setPageState])
+  }, [dispatch, setPageState, pokeName])
 
   React.useEffect(() => {
     init();
@@ -55,7 +55,7 @@ export default function PokemonPage() {
     }
 
     navigate(`/pokemons/${currentPage}`, {state: {page: currentPage}});
-  }, [selectedType, currentPage, storedListType]);
+  }, [selectedType, currentPage, storedListType, dispatch, navigate]);
 
   return (
     <>

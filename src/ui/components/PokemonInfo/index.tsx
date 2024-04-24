@@ -22,7 +22,7 @@ export default function PokemonInfo(props: Props) {
     const typeUid = getUID(typeUri);
     dispatch(Actions.setSelectedType(typeUid));
     navigate(`/pokemons/type/${typeUid}`, {state: {typeUid: typeUid}});
-  }, []);
+  }, [dispatch, navigate]);
 
   return (
     <div className="info-section">
@@ -32,7 +32,7 @@ export default function PokemonInfo(props: Props) {
           <div>
             <span className="title">Seems like I don't exist 👀</span>
           </div>
-          <img src="/assets/38.png" />
+          <img src="/assets/38.png" alt="some alt" />
           <h4 className="title">OOOPS!</h4>
         </div>
       )}
@@ -50,7 +50,7 @@ export default function PokemonInfo(props: Props) {
               ))}
           </div>
           <div>
-            <img src={imgSrc} />
+            <img src={imgSrc}  alt={pokemon?.name} />
           </div>
           <div>
             <span className="title">Moves:</span>

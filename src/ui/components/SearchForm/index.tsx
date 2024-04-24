@@ -20,7 +20,7 @@ export default function SearchForm() {
       const name = event.currentTarget.elements.search.value;
       navigate(`/pokemon/${name}`, {state: {name: name}});
     },
-    [],
+    [navigate],
   );
 
   return (

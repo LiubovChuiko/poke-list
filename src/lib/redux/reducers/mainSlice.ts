@@ -13,9 +13,9 @@ export type Config = {
 const initialState: Config = {
   pokemonsCount: 0,
   currentPage: 1,
-  pokemons: Array(),
+  pokemons: [],
   currentPokemon: undefined,
-  pokeTypes: Array(),
+  pokeTypes: [],
   listType: 'main',
   selectedType: 'none',
 };

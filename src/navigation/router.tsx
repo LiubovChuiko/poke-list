@@ -1,5 +1,5 @@
 import {createBrowserRouter} from 'react-router-dom';
-import { Home, Pokemon, Pokemons } from 'ui';
+import { Pokemon, Pokemons } from 'ui';
 
 const router = createBrowserRouter([
     {

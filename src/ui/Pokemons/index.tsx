@@ -14,13 +14,12 @@ import {
 
 type Props = {
   listType: ListType;
-  typeUid?: string;
 };
 
 type Store = {main: Config};
 
 export default function Pokemons(props: Props) {
-  const {listType, typeUid} = props;
+  const {listType} = props;
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -36,9 +35,6 @@ export default function Pokemons(props: Props) {
   );
   const currentPage = useSelector<Store, number>(
     state => state.main.currentPage,
-  );
-  const storedListType = useSelector<Store, ListType>(
-    state => state.main.listType,
   );
 
   const totalPages = Math.ceil(pokemonsCount / 20);
@@ -65,7 +61,7 @@ export default function Pokemons(props: Props) {
     const pTypesList = await Services.getTypesList();
     if (!pTypesList || !!pTypesList.error) return;
     dispatch(Actions.setPokeTypes(pTypesList.response));
-  }, [listType, currentPage, location]);
+  }, [listType, currentPage, location, dispatch]);
 
   React.useEffect(() => {
     init();
@@ -74,7 +70,7 @@ export default function Pokemons(props: Props) {
   const onPaginate = React.useCallback(async (page: number) => {
     dispatch(Actions.setCurrentPage(page));
     navigate(`/pokemons/${page}`, {state: {page: page}});
-  }, []);
+  }, [dispatch, navigate]);
 
   const onSelectType = React.useCallback((typeUid: string) => {
     dispatch(Actions.setSelectedType(typeUid));
@@ -83,7 +79,7 @@ export default function Pokemons(props: Props) {
       return;
     }
     navigate(`/pokemons/type/${typeUid}`, {state: {typeUid: typeUid}});
-  }, []);
+  }, [dispatch, navigate]);
 
   return (
     <>

@@ -8,22 +8,17 @@ type Props = {
 };
 
 export default function PokemonCard(props: Props) {
-  const {uid, name} = props;
+  const {name} = props;
   const navigate = useNavigate();
-  // const imgSrc =
-  //   'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' +
-  //   uid +
-  //   '.png';
-
   const imgSrc = `https://img.pokemondb.net/artwork/${name}.jpg`;
 
   const onClick = React.useCallback(() => {
     navigate(`/pokemon/${name}`, {state: {name: name}});
-  }, [navigate]);
+  }, [navigate, name]);
 
   return (
     <div className="card" onClick={() => onClick()}>
-      <img src={imgSrc} />
+      <img src={imgSrc}  alt={name} />
       <h1>{name}</h1>
     </div>
   );
