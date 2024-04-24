@@ -1,0 +1,11 @@
+@use 'styles/variables.module.scss' as *;
+
+.select-section {
+  @extend %section;
+  padding: 0 1.5rem;
+  text-align: end;
+
+  @media (min-width: 401px) {
+    padding: 0 2rem;
+  }
+}

@@ -1,0 +1,98 @@
+@use 'styles/variables.module.scss' as *;
+
+.pokemon-section {
+  @extend %section;
+  padding: 0 2rem;
+
+  .breadcrumbs {
+    text-align: start;
+    font-size: medium;
+    font-weight: 600;
+    cursor: pointer;
+
+    span {
+      color: $active-blue;
+    }
+  }
+
+  .poke-card {
+    padding: 2rem 0;
+    text-align: start;
+
+    h1 {
+      font-size: 2rem;
+      color: $active-blue;
+      letter-spacing: 0.45rem;
+      line-height: 2rem;
+      text-align: center;
+
+      @media (min-width: 401px) {
+        font-size: 3rem;
+      }
+    }
+
+    h1:first-letter {
+      text-transform: uppercase;
+    }
+
+    .info-section {
+      padding-bottom: 3rem;
+      text-align: center;
+
+      div {
+        padding: 0.5rem 0;
+        font-size: large;
+      }
+
+      img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        padding: 1rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+
+      div.moves {
+        display: grid;
+        padding: 0.5rem 0;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-rows: repeat(1, minmax(0, 1fr));
+        gap: 1rem;
+        justify-content: space-between;
+        width: 100%;
+        font-size: medium;
+        line-height: 1.25rem;
+        color: $light-text;
+
+        @media (min-width: 401px) {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        @media screen and (min-width: 1024px) {
+          padding: 0.5rem 5rem;
+          grid-template-columns: repeat(6, minmax(0, 1fr));
+        }
+      }
+
+      div.types-grid {
+        display: flex;
+        overflow: hidden;
+        padding: 0;
+        gap: 1.5rem;
+        justify-content: center;
+        width: 100%;
+
+        div {
+          cursor: pointer;
+        }
+
+        div.type {
+          font-weight: 600;
+          color: $active-blue;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

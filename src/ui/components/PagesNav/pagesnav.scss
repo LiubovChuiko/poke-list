@@ -1,0 +1,8 @@
+@use 'styles/variables.module.scss' as *;
+
+.section {
+  @extend %section;
+  padding: 0 0 3rem;
+  font-size: medium;
+  align-items: center;
+}

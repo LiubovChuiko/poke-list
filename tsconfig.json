@@ -18,9 +18,18 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "src", 
+    "paths": {
+      "services/*": ["services/*"],
+      "styles/*": ["styles/*"],
+      "ui/*": ["ui/*"],
+      "lib/*": ["lib/*"],
+      "navigation/*": ["navigation/*"],
+      "context/*": ["context/*"],
+    }
   },
   "include": [
-    "src"
+    "src", "app-data-types.d.ts"
   ]
 }

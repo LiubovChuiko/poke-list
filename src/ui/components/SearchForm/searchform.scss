@@ -1,0 +1,25 @@
+@use 'styles/variables.module.scss' as *;
+
+.form-section {
+  @extend %section;
+  padding: 0 2rem;
+
+  .form {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+
+  .right-button {
+    background-color: $active-blue;
+    color: $body-bg;
+    pointer-events: auto;
+  }
+
+  .left-button {
+    border: 0;
+    background-color: transparent;
+    color: $active-blue;
+    pointer-events: auto;
+  }
+}

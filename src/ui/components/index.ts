@@ -1,0 +1,10 @@
+export {default as Button} from './Button';
+export {default as Header} from './Header';
+export {default as Spinner} from './Spinner';
+export {default as PokemonCard} from './PokemonCard';
+export {default as PokemonInfo} from './PokemonInfo';
+export {default as PokemonsList} from './PokemonsList';
+export {default as PagesNav} from './PagesNav';
+export {default as TextInput} from './TextInput';
+export {default as TypesSelect} from './TypesSelect';
+export {default as SearchForm} from './SearchForm';
